@@ -7,12 +7,12 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>98393d83-f2be-4d46-880a-f07f95ea533f</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>FSharpStarter</RootNamespace>
-    <AssemblyName>FSharpStarter</AssemblyName>
+    <RootNamespace>FSharpMonads</RootNamespace>
+    <AssemblyName>FSharpMonads</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>FSharpStarter</Name>
+    <Name>FSharpMonads</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,8 +40,12 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FSharpStarter.fs" />
-    <Compile Include="FSharpStarterShould.fs" />
+    <Compile Include="Ints.fs" />
+    <Compile Include="IntsShould.fs" />
+    <Compile Include="Hours.fs" />
+    <Compile Include="HoursShould.fs" />
+    <Compile Include="ErrorHandling.fs" />
+    <Compile Include="ErrorHandlingShould.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">14</MinimumVisualStudioVersion>

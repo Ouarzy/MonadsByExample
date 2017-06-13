@@ -26,7 +26,7 @@ Target "Build" (fun _ ->
 )
 
 Target "Test" (fun _ ->
-    ["build/FSharpStarter.dll"] 
+    ["build/FSharpMonads.dll"] 
     |> Fake.Testing.XUnit.xUnit 
         (fun a -> { a with ToolPath = "packages/xunit.runner.console/tools/xunit.console.exe"})        
 )
