@@ -2,22 +2,39 @@ module ErrorHandling
 
 open System
 
+type Result<'TSuccess, 'TFailure> =
+    | Success of 'TSuccess
+    | Failure of 'TFailure
+
+let neutralElement x = Success x
+
+let bind f input =
+    match input with
+    | Success x -> f x
+    | Failure y -> Failure y
+
 let stringToInt (s:string) =
     try
-        s |> int
+        Success (s |> int)
     with
-        | ex -> failwith "erreur de stringToInt"
+        | _ -> Failure "erreur de stringToInt"
 
 let isPositive i = 
     if (i > 0) then
-        i
+         Success i
     else
-        failwith "i is negative"
+        Failure "i is negative"
+
+let isNegative i = 
+    if (i < 0) then
+         Success i
+    else
+        Failure  "i is positive"
 
 let intToString (i: int) = 
     try
-        i |> string
+        Success ( i |> string)
     with
-    | _ -> failwith "erreur de intToString"
+        | _ -> Failure  "erreur de intToString"
 
-let stringToIntIsPositiveIntToString = stringToInt >> isPositive >> intToString
+let stringToIntIsPositiveIntToString = stringToInt >> bind isPositive >> bind intToString

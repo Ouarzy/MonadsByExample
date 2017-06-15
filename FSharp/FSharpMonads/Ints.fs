@@ -2,10 +2,9 @@ module Ints
 
 open System
 
+let neutralElement = 0
 let add x y = x + y 
 let minus x y = x - y 
-let neutralElement = 0
-
 
 
 let addOne x = add 1 x

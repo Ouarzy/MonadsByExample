@@ -2,11 +2,10 @@ module Hours
 
 open System
 
-open System
 
+let neutralElement = 24
 let add x y = (x + y) % 24
 let minus x y = (x - y) % 24
-let neutralElement = 24
 
 let addOne x = add 1 x
 
