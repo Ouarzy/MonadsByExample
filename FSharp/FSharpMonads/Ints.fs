@@ -14,4 +14,4 @@ let addFive x = add 5 x
 let minusTen x = minus x 10
 
 
-let addOneTwoTimesMinusTen = addOne >> addFive >> minusTen
+let addOneAddFiveMinusTen = addOne >> addFive >> minusTen

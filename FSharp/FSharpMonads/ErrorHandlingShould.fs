@@ -4,14 +4,6 @@ open Xunit
 open Swensen.Unquote
 open ErrorHandling
 
-[<Fact>]
-let ``string to int is positive int to string``() = 
-    test <@ stringToIntIsPositiveIntToString "5" = Success "5" @>
-
-[<Fact>]
-let ``string to int is positive int to string fail``() = 
-    test <@ stringToIntIsPositiveIntToString "-3" = Failure "i is negative" @>
-
 
 [<Fact>]
 let ``left identity``() = 
