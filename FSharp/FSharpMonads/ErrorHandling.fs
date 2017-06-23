@@ -13,6 +13,8 @@ let bind f input =
     | Success x -> f x
     | Failure y -> Failure y
 
+let (>>=) x f = bind f x
+
 let stringToInt (s:string) =
     try
         Success (s |> int)
@@ -37,4 +39,4 @@ let intToString (i: int) =
     with
         | _ -> Failure  "erreur de intToString"
 
-let stringToIntIsPositiveIntToString = stringToInt >> bind isPositive >> bind intToString
+let stringToIntIsPositiveIntToString s = stringToInt s >>= isPositive >>= intToString
